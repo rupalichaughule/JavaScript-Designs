@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Calculator</title>
+<style type="text/css">
+
+.calc{
+	margin-left:400px;
+	margin-top:100px;
+
+	width:250px;	
+	height:400px; 
+	padding:40px;
+	
+	}
+	
+</style>
+
+</head>
+
+<body>
+
+<div class="calc">
+<b>CALCULATOR</b>  
+
+<form name="frm">
+<br />
+<input name="Result"  style="width:200px" type="text"/><br />
+<div class="blink">   <br></br>
+
+<input type="button" value="1"  onclick="run1()" style="width:60px" height="60px" />
+<input type="button" value="2"  onclick="run2()"style="width:60px" height="60px"/>
+<input type="button" value="3"  onclick="run3()"style="width:60px" height="60px"/>
+<input type="button" value="4"  onclick="run4()"style="width:60px" height="60px"/>
+<input type="button" value="5"  onclick="run5()"style="width:60px" height="60px"/>
+<input type="button" value="6"  onclick="run6()"style="width:60px" height="60px"/><br>
+<input type="button" value="7"  onclick="run7()"style="width:60px" height="60px"/>
+<input type="button" value="8"  onclick="run8()"style="width:60px" height="60px"/>
+<input type="button" value="9"  onclick="run9()"style="width:60px" height="60px"/>
+<input type="button" value="0"  onclick="run0()"style="width:60px" height="60px"/>
+
+<input type="button" value="+"  onclick="run10()"style="width:60px" height="60px"/>
+<input type="button" value="-"  onclick="run11()"style="width:60px" height="60px">
+<input type="button" value="/"  onclick="run12()"style="width:60px" height="60px"/>
+<input type="button" value="="  onclick="run13()"style="width:60px" height="60px"/>
+<input type="button" value="C" onclick="runclear()" style="width:60px" height="60px"/>
+<input type="button" value="*"  onclick="run14()"style="width:60px" height="60px"/>
+<input type="button" value="."  onclick="run16()"style="width:60px" height="60px"/>
+<input type="button" value="%"  onclick="run22()"style="width:60px" height="60px"/>
+<input type="button" value="square"  onclick="run23()"style="width:60px" height="60px"/>
+<input type="button" value="sqrrt"  onclick="run24()"style="width:60px" height="60px"/>
+<input type="button" value="sin"  onclick="run25()"style="width:60px" height="60px"/>
+<input type="button" value="cos"  onclick="run26()"style="width:60px" height="60px"/>
+<input type="button" value="tan"  onclick="run27()"style="width:60px" height="60px"/>
+<input type="button" value="log"  onclick="run28()"style="width:60px" height="60px"/>
+<input type="button" value="abs"  onclick="run29()"style="width:60px" height="60px"/>
+<input type="button" value="exp"  onclick="run30()"style="width:60px" height="60px"/>
+<input type="button" value="Delete"  onclick="run15()"style="width:60px" height="60px"/>
+
+
+</div>
+</form>
+<script type="text/javascript">
+function run1()
+{
+	document.frm.Result.value +='1';
+	}
+	function run2()
+{
+	document.frm.Result.value +='2';
+	}
+	function run3()
+{
+	document.frm.Result.value +='3';
+	}
+	function run4()
+{
+	document.frm.Result.value +='4';
+	}
+	function run5()
+{
+	document.frm.Result.value +='5';
+	}
+	function run6()
+{
+	document.frm.Result.value +='6';
+	}
+	function run7()
+{
+	document.frm.Result.value +='7';
+	}
+	function run8()
+{
+	document.frm.Result.value +='8';
+	}
+	function run9()
+{
+	document.frm.Result.value +='9';
+	}
+	function run0()
+{
+	document.frm.Result.value +='0';
+	}
+		function run10()
+{
+	document.frm.Result.value +='+';
+	}
+		function run11()
+{
+	document.frm.Result.value +='-';
+	}
+		function run12()
+{
+	document.frm.Result.value +='/';
+	}
+	function run22()
+{
+	document.frm.Result.value +='%';
+	}
+	function run23()
+	{
+		document.frm.Result.value=Math.pow(document.frm.Result.value,2);
+	
+	}
+	function run24()
+	{
+		document.frm.Result.value=Math.sqrt(document.frm.Result.value);
+	
+	}
+	function run25()
+	{
+		document.frm.Result.value=Math.sin(document.frm.Result.value);
+	
+	}
+	function run26()
+	{
+		document.frm.Result.value=Math.cos(document.frm.Result.value);
+	
+	}
+	function run27()
+	{
+		document.frm.Result.value=Math.tan(document.frm.Result.value);
+	
+	}
+	function run28()
+	{
+		document.frm.Result.value=Math.log(document.frm.Result.value);
+	
+	}
+	function run29()
+	{
+		document.frm.Result.value=Math.abs(document.frm.Result.value);
+	
+	}
+	function run30()
+	{
+		document.frm.Result.value=Math.exp(document.frm.Result.value);
+	
+	}
+		function run13()
+{
+	var evalo =eval(document.frm.Result.value)
+	document.frm.Result.value=evalo;
+	}
+	function runclear()
+	{
+		document.frm.Result.value='';
+		}
+		
+	
+		function run14()
+		
+{	document.frm.Result.value +='*';}
+
+function run16()
+		
+{	document.frm.Result.value +='.';}
+
+	function run15()
+{
+	document.frm.Result.value=document.frm.Result.value.substring(0,document.frm.Result.value.length-1);
+	}
+</script>
+
+</div>
+</body>
+</html>

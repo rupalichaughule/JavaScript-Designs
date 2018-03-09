@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+	form
+	{
+		background-image:url(images/form1.jpg);
+		}
+	span
+	{
+		color:#F00;
+	}
+</style>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Form</title>
+</head>
+
+<body>
+<form action="" method="#" enctype="multipart/form-data" target="" name="myForm">
+<fieldset>
+<legend><b> Registration </b></legend>
+ Name:  <input type="text" name="name" onblur="nameFunction()" value="" placeholder="Enter Name"> <span id="name1"></span><br></br>
+ 
+Password: <input type="password" id="pass1" name="pass" placeholder="Password"><span id="passe"></span><br></br>
+ 
+Confirm Password: <input type="password" id="pass2" placeholder="Confirm Password" onblur="passchk()"> <span id="paserr"></span><br></br>
+ 
+ Gender:<input type="radio" id="gender" value="Male">Male
+ <input type="radio" id="gender" value="Female">Female
+<span id="gen"></span> 
+ <br></br>
+ 
+ Languages Known:<br> <input type="checkbox" id="check" name="lang">HTML  <span id="checkbox"></span><br>
+ 				  <input type="checkbox" id="check" name="lang">CSS<br>
+                  <input type="checkbox" id="check" name="lang">PHP<br></br>
+                  
+ E-mail: <input type="email" name="email" placeholder="E-mail" onblur="emailFunction()"><span id="email1"></span><br></br>
+ 
+ Contact Number: <input type="tel" name="contact" placeholder="Contact Number" onblur="phoneFunction()"><span id="phone"></span><br></br>
+                  
+  Birthdate: <input type="date-time" name="bday" max="2019-12-31" min="1950-12-30" onblur="genderFunction()"><br></br>
+  
+  Select DateTime: <input type="datetime-local" name="time"><br></br>
+  
+  Country: <select name="country">
+  				<option value="india" selected>India</option>
+                <option value="usa">USA</option>
+                <option value="spain">Spain</option>
+                <option value="shri">Shrilanka</option>
+                <option value="france">France</option>
+           </select><br></br>
+  
+ Address: <textarea name="area" rows="3" cols="20" placeholder="Address" onfocus="checkboxFunction()"></textarea><br></br>
+ 
+ <input type="submit" value="Submit">&nbsp;&nbsp;
+ <input type="reset">
+</fieldset>
+</form>
+
+<script>
+function nameFunction()
+{
+	//var name=document.myForm.name.value.length;
+   if(document.myForm.name.value=="")
+   {
+	   document.getElementById("name1").innerHTML = "Enter Input.";
+   }
+   else
+   {
+	var x = /^[a-zA-Z]+$/;
+	if(document.myForm.name.value.match(x))
+	{
+		document.getElementById("name1").innerHTML = "";	
+	}
+	else
+	{
+		document.getElementById("name1").innerHTML = "Enter Valid Input.";
+	}
+   }
+}
+
+function checkboxFunction() 
+{
+    var x = document.getElementById("check").checked;
+    if(x==false)
+    {
+    	 document.getElementById("checkbox").innerHTML = "Select the Language.";
+    }
+	else
+	{
+		 document.getElementById("checkbox").innerHTML = "";
+	}
+	
+}
+function genderFunction() 
+{
+    var x = document.getElementById("gender").checked;
+    if(x==false)
+    {
+    	 document.getElementById("gen").innerHTML = "Select the Gender.";
+    }
+	else
+	{
+		 document.getElementById("gen").innerHTML = "";
+	}
+	
+}
+function passchk()
+{
+	var x =document.getElementById('pass1').value;
+	var y = document.getElementById('pass2').value;
+	
+	if(x == y)
+	{
+		document.getElementById('paserr').innerHTML='';	
+	}
+	else
+	{
+		document.getElementById('paserr').innerHTML='Password Not matched';
+	}	
+}
+function emailFunction()
+{
+  if(document.myForm.email.value=="")
+   {
+		document.getElementById("email1").innerHTML = "enter key.";
+   }
+   else
+   {
+	var x = /^([a-z0-9])+\@([a-z])+\.([a-z])+$/;
+	if(document.myForm.email.value.match(x))
+	{
+		document.getElementById("email1").innerHTML = "";	
+	}
+	else
+	{
+		document.getElementById("email1").innerHTML = "Enter Valid E-mail Address.";
+	}
+  }
+}
+function phoneFunction()
+{
+	if(document.myForm.contact.value=="")
+	{
+		document.getElementById("phone").innerHTML = "Enter Contact Number.";
+	}
+	else
+	{
+	var x = /^[0-9]+$/;
+	if(document.myForm.contact.value.match(x))
+	{
+		document.getElementById("phone").innerHTML = "";	
+	}
+	else
+	{
+		document.getElementById("phone").innerHTML = "Enter valid Contact Number.";
+	}
+	}
+}
+
+</script>
+
+</body>
+</html>
